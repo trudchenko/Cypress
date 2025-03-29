@@ -9,7 +9,7 @@ module.exports = defineConfig({
   viewportHeight: 1000,
   viewportWidth: 1200,
   e2e: {
-    specPattern: 'cypress/e2e/**/todo.cy.{js,jsx,ts,tsx}',
+    specPattern: 'cypress/e2e/**/*.test.{js,jsx,ts,tsx}',
     // specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
     baseUrl: 'https://example.cypress.io',
     defaultCommandTimeout: 5000,
