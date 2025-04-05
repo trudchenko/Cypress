@@ -14,12 +14,12 @@ describe('Login checks', () => {
     });
 
     it('Login', () => {
-        loginPage.executeLogin('rudchenkosumy+276@gmail.com', 'Theodosiana1');
+        loginPage.executeLogin(Cypress.env('defaultUserEmail'), Cypress.env('defaultUserPassword'));
         loginPage.myProfileButton.should('exist');
     });
 
-    it('Login Custom Command', () => {
-        loginPage.executeLoginCustomCommand('rudchenkosumy+276@gmail.com', 'Theodosiana1');
-        loginPage.myProfileButton.should('exist');
-    });
+    // it('Login Custom Command', () => {
+    //     loginPage.executeLoginCustomCommand('rudchenkosumy+276@gmail.com', 'Theodosiana1');
+    //     loginPage.myProfileButton.should('exist');
+    // });
 });

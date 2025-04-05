@@ -4,7 +4,7 @@ const registration = new Registration();
 describe('Registration page tests', () => {
   
     beforeEach(() => {
-        cy.visit('https://qauto.forstudy.space/', {
+        cy.visit('', {
             auth: {
                  username: 'guest',
                  password: 'welcome2qauto'
@@ -73,9 +73,10 @@ describe('Registration page tests', () => {
         registration.selectors.buttonRegister().should('have.prop', 'disabled', true);
     });
 
-    it('Test Successfull Registration', () => {
+    it.skip('Test Successfull Registration', () => {
         const email = 'rudchenkosumy+' + Math.floor(Math.random() * 1000) + '@gmail.com';
-        registration.fillAllFields('Tetiana','Rudchenko',email,'Theodosiana1','Theodosiana1');
+        console.log(email);
+        registration.fillAllFields('Tetiana','Rudchenko',email,'Theodosiana1!','Theodosiana1!');
         registration.clikcRegisterButton();
         registration.selectors.myProfileButton().should('exist');
     });

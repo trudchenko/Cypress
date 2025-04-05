@@ -2,12 +2,17 @@
   "name": "lesson-19",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:open": "npx cypress open",
+    "cy:open": "npx cypress open --env TEST_ENV=dev",
+    "cy:open:dev": "npx cypress open --env TEST_ENV=dev",
+    "cy:open:prod": "npx cypress open --env TEST_ENV=prod",
     "cy:run": "npx cypress run",
     "cy:run:headed": "npx cypress run --headed",
-    "cypress:run:headed:firefox": "cypress run --headed --browser=firefox"
+    "cy:run:headed:firefox": "cypress run --headed --browser=firefox",
+    "cy:run:dev": "npx cypress run --env TEST_ENV=dev",
+    "cy:run:prod": "npx cypress run --env TEST_ENV=prod",
+    "cy:run:report": "npx cypress run --reporter mochawesome"
   },
   "type": "module",
   "author": "",
@@ -15,6 +20,15 @@
   "description": "",
   "devDependencies": {
     "cypress": "^14.2.1",
-    "cypress-xpath": "^2.0.1"
+    "cypress-xpath": "^2.0.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-multi-reporters": "^2.0.5",
+    "cypress-parallel": "^0.15.0",
+    "cypress-plugin-api": "^2.11.2"
   }
 }
