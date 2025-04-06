@@ -5,3 +5,5 @@ cypress/videos
 runner-results
 results
 reports
+mochawesome-report
+

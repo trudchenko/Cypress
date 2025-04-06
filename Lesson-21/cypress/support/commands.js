@@ -15,7 +15,12 @@ Cypress.Commands.add('login', {}, (email, password) => {
     cy.get('#signinEmail').type(email);
     cy.get('#signinPassword').type(password);
     cy.contains('button', 'Login').click()
-  });
+});
+
+Cypress.Commands.add('addExpense', {}, (expense) => { 
+    return cy.request('POST','api/expenses', expense);
+});
+   
 //
 //
 // -- This is a child command --
@@ -40,4 +45,14 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
     }
   
     return originalFn(element, text, options);
+  });
+
+  Cypress.Commands.overwrite('visit', (originalFn, ...args)  => { 
+    originalFn(args[0], {
+      auth: {
+        username: 'guest',
+        password: 'welcome2qauto'
+      },
+      ...args
+    })
   });
