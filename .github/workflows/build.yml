@@ -8,7 +8,6 @@ on:
 jobs:
   tests-cypress-default-image-firefox: 
       name: 'Cypress e2e tests on default image firefox'
-      needs: tests-api
       runs-on: ubuntu-latest
       container:
        image: cypress/included:latest
