@@ -1,0 +1,8 @@
+{
+    "baseUrl": "https://qauto2.forstudy.space/",
+    "env": {
+        "env": "prod",
+        "defaultUserEmail": "rudchenkosumy+333@gmail.com",
+        "defaultUserPassword": "Theodosiana2!"
+    }
+}

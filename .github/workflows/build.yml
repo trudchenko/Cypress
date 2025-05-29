@@ -1,0 +1,23 @@
+name: CI Testing
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    types: ['opened']
+jobs:
+  tests-cypress-default-image-firefox: 
+      name: 'Cypress e2e tests on default image firefox'
+      runs-on: ubuntu-latest
+      container:
+       image: cypress/included:latest
+       options: --user 1001
+      steps:
+        - uses: actions/checkout@v4
+        - name: Install dependencies
+          working-directory: ./Lesson-21
+          run: npm ci
+        - uses: cypress-io/github-action@v6
+          with:
+            browser: firefox
+            working-directory: Lesson-21
