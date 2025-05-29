@@ -11,8 +11,8 @@ jobs:
       needs: tests-api
       runs-on: ubuntu-latest
       container:
-      image: cypress/included:latest
-      options: --user 1001
+       image: cypress/included:latest
+       options: --user 1001
       steps:
         - uses: actions/checkout@v4
         - name: Install dependencies
