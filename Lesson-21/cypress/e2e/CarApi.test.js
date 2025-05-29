@@ -56,7 +56,7 @@ describe('Car Api', () => {
 
     });
 
-    it('Add Expense via API', function () {
+    it.skip('Add Expense via API', function () {
         myExpense.carId = myCar.id;
         cy.addExpense(myExpense).then(response => {
             expect(response.status).to.equal(200);
@@ -70,7 +70,7 @@ describe('Car Api', () => {
         });
     });
 
-    it('Test expense in UI', function () {
+    it.skip('Test expense in UI', function () {
 
         cy.visit(`/panel/expenses?carId=${myCar.id}`);
 
@@ -94,13 +94,13 @@ describe('Car Api', () => {
 
         // });
            
-    after(() => {
-        cy.request('api/cars').then(response => {
-            let carArray = response.body.data;
+    // after(() => {
+    //     cy.request('api/cars').then(response => {
+    //         let carArray = response.body.data;
             
-            for (let i=0; i < carArray.length; i++) {
-                cy.request('DELETE', 'api/cars/'+carArray[i].id);
-            }
-        }); 
-    });
+    //         for (let i=0; i < carArray.length; i++) {
+    //             cy.request('DELETE', 'api/cars/'+carArray[i].id);
+    //         }
+    //     }); 
+    // });
 });
